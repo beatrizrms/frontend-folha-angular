@@ -9,6 +9,10 @@
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: table;
+  }
 }
 
 @for $var from 1 to $grid-columns + 1 {
@@ -16,6 +20,9 @@
     // border: 1px solid blue;
     width: calc(100% / (12 / #{$var}));
     overflow: hidden;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      display: table-cell;
+    }
   }
 
   @media (min-width: $breakpoint-md) {
@@ -23,6 +30,10 @@
       // border: 1px solid rgb(124, 124, 124);
       width: calc(100% / (12 / #{$var}));
       overflow: hidden;
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: table-cell;
+      }
     }
   }
 
@@ -31,6 +42,10 @@
       // border: 1px solid yellow;
       width: calc(100% / (12 / #{$var}));
       overflow: hidden;
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: table-cell;
+      }
     }
   }
 
@@ -39,6 +54,10 @@
       // border: 1px solid green;
       width: calc(100% / (12 / #{$var}));
       overflow: hidden;
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: table-cell;
+      }
     }
   }
 }

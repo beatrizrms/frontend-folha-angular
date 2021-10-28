@@ -43,6 +43,7 @@ header {
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         -ms-flex-pack: distribute;
         justify-content: space-around;
+        width: auto;
       }
      
     }
