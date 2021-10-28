@@ -1,0 +1,63 @@
+@import "/src/assets/scss/variables.scss";
+@import "/src/assets/scss/mixins.scss";
+
+// Grid system
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+@for $var from 1 to $grid-columns + 1 {
+  .col-#{$var} {
+    // border: 1px solid blue;
+    width: calc(100% / (12 / #{$var}));
+    overflow: hidden;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    .col-lg-#{$var} {
+      // border: 1px solid rgb(124, 124, 124);
+      width: calc(100% / (12 / #{$var}));
+      overflow: hidden;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .col-md-#{$var} {
+      // border: 1px solid yellow;
+      width: calc(100% / (12 / #{$var}));
+      overflow: hidden;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    .col-sm-#{$var} {
+      // border: 1px solid green;
+      width: calc(100% / (12 / #{$var}));
+      overflow: hidden;
+    }
+  }
+}
+
+// Control dynamic appearance
+@media (min-width: $breakpoint-md) {
+  .col-lg-0 {
+    display: none !important;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .col-md-0 {
+    display: none !important;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .col-sm-0 {
+    display: none !important;
+  }
+}

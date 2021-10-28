@@ -1,0 +1,21 @@
+// Grid system
+$breakpoint-xsm: 375px;
+$breakpoint-sm: 480px; // Mobile
+$breakpoint-sm-md: 600px; // Larger Mobile
+$breakpoint-md: 768px; // Desktop
+$breakpoint-lg: 1024px; // Monitors
+
+/* Color Theme Swatches in Hex */
+$dark-blue: #2c3e50;
+$red: #e74c3c;
+$red-rgba: rgba(231, 76, 60, 0.7);
+$white: #ecf0f1;
+$light-blue: #3498db;
+$light-blue-darker: #2980b9;
+$gray: #bbb;
+$light-gray: #ccc;
+$dark-gray: #333;
+$background: #edf0f1;
+
+//Grid
+$grid-columns: 12;

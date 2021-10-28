@@ -1,0 +1,45 @@
+// Mixins
+@mixin clickable-item {
+  cursor: pointer;
+}
+
+@mixin hover-opacity {
+  &:hover {
+    @include clickable-item;
+    opacity: 0.8;
+  }
+}
+
+@mixin hover-increase {
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin display-flex {
+  display: flex;
+}
+
+@mixin display-flex-center {
+  @include display-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin display-column {
+  @include display-flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+// Extendable classes
+.default-title {
+  padding: 0.5rem 1.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+
+  @media (max-width: $breakpoint-xsm) {
+    font-size: 0.8rem;
+  }
+}

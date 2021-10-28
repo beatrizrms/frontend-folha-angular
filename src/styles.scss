@@ -1,0 +1,53 @@
+@import '/src/assets/scss/variables.scss';
+@import '/src/assets/scss/mixins.scss';
+@import '/src/assets/scss/grid.scss';
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+main {
+  display: block;
+  width: 100%;
+}
+
+// Btns
+
+.btn {
+  border: none;
+  background-color: $dark-blue;
+  color: $white;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  @include display-flex-center;
+  @include hover-opacity;
+
+  .btn-text {
+    text-transform: uppercase;
+    padding-left: 0.5rem;
+    display: none;
+
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+
+  &.btn-social {
+    background-color: $white;
+    font-size: 1rem;
+    border: 1px solid;
+
+    &.twitter {
+      border-color: $light-blue-darker;
+      color: $light-blue-darker;
+    }
+
+    &.facebook {
+      border-color: $dark-blue;
+      color: $dark-blue;
+    }
+  }
+}

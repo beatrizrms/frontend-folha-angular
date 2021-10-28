@@ -1,0 +1,155 @@
+@import "/src/assets/scss/variables.scss";
+@import "/src/assets/scss/mixins.scss";
+
+::ng-deep {
+  app-carousel {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.carousel {
+  position: relative;
+  padding: 0 1rem;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0;
+  }
+
+  .container-img {
+    height: 100%;
+    @include display-column;
+    position: relative;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+
+      min-height: 15rem;
+
+      @media (max-width: $breakpoint-sm) {
+        min-height: 15rem;
+      }
+    }
+  }
+
+  .carousel-description {
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    width: 100%;
+
+    @media (max-width: $breakpoint-sm) {
+      bottom: 3rem;
+      padding: 0;
+    }
+
+    .title {
+      @extend .default-title;
+      color: $white;
+      background-color: $light-blue;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 20rem;
+
+      @media (max-width: $breakpoint-xsm) {
+        max-width: 15rem;
+      }
+    }
+
+    .description {
+      font-size: 2rem;
+      padding: 1rem 0;
+      color: $dark-blue;
+      max-width: 40rem;
+      color: $white;
+
+      @media (max-width: $breakpoint-md) {
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .outside {
+    font-size: 1.3rem;
+    color: $dark-blue;
+    display: none;
+
+    @media (max-width: $breakpoint-sm) {
+      display: block;
+    }
+  }
+
+  .pagination-controls {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+
+    @media (hover: none) {
+      display: none;
+    }
+
+    .control-left,
+    .control-right {
+      width: 4rem;
+      height: 4rem;
+      background-color: white;
+      border-radius: 50px;
+      position: absolute;
+      background-repeat: no-repeat;
+      @include display-flex-center;
+      @include clickable-item;
+      @include hover-increase;
+    }
+
+    .icon {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .control-left {
+      left: -2%;
+      box-shadow: -1px 2px 2px $gray;
+
+      .icon {
+        background-image: url(../../../assets/images/arrow_left-icon.png);
+      }
+    }
+
+    .control-right {
+      right: 0;
+      box-shadow: 1px 2px 2px $gray;
+
+      .icon {
+        background-image: url(../../../assets/images/arrow_right-icon.png);
+      }
+    }
+  }
+}
+
+.pagination-dots {
+  height: 3rem;
+  width: 100%;
+  @include display-flex-center;
+
+  .dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: $gray;
+    border-radius: 50px;
+    margin: 0 0.5rem;
+    @include clickable-item;
+
+    &.current {
+      background-color: $light-blue;
+    }
+  }
+}

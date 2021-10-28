@@ -1,0 +1,23 @@
+<div class="carousel" tabindex="0" role="listbox" aria-label="carousel de notícias" *ngFor="let item of items; let i = index">
+  <!-- Container with picture, title and description (description only up medium devices)-->  
+  <div class="container-img" tabindex="0" role="option" attr.aria-label="Notícia: {{item.title}}">
+      <img [src]="item.img" alt="{{item.description}}" />
+      <div class="carousel-description">
+        <h3 class="title">{{ item.title }}</h3>
+        <p class="description col-sm-0" tabindex="0" role="text" attr.aria-label="Descrição: {{item.description}}">{{ item.description }}</p>
+      </div>
+    </div>
+    <!-- For small devices the description will appear here! -->
+    <p class="description outside" tabindex="0" role="text" attr.aria-label="Descrição: {{item.description}}">{{ item.description }}</p>
+    <!-- Controls to back and foward a slide -->
+    <div class="pagination-controls">
+      <div class="control-left" tabindex="0" role="button" aria-label="Notícia anterior"><span class="icon"></span></div>
+      <div class="control-right" tabindex="0" role="button" aria-label="Notícia Seguinte"><span class="icon"></span></div>
+    </div>
+  </div>
+  <!-- Dots: show the position of current picture at total-->
+  <div class="pagination-dots">
+    <div class="dot current"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>

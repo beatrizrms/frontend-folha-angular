@@ -1,0 +1,46 @@
+@import "/src/assets/scss/variables.scss";
+@import "/src/assets/scss/mixins.scss";
+
+.advertising {
+  @include display-column;
+  @include display-flex-center;
+  @include clickable-item;
+  text-decoration: none;
+
+  .container-ads {
+    position: relative;
+    @include display-column;
+
+    .ads-label {
+      color: $gray;
+      font-size: 0.9rem;
+      text-align: right;
+      padding: 0 1rem;
+    }
+  }
+
+  &.aside {
+    justify-content: flex-start;
+  }
+}
+
+// Sections
+
+.column-section {
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-weight: 400;
+  color: $dark-blue;
+  padding: 1rem;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 1rem 0;
+  }
+
+  &.grouped {
+    color: $red;
+    padding-left: 0;
+  }
+}

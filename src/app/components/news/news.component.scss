@@ -1,0 +1,92 @@
+@import "/src/assets/scss/variables.scss";
+@import "/src/assets/scss/mixins.scss";
+
+::ng-deep {
+  app-news {
+    width: 100%;
+  }
+}
+
+// Generic News
+.news {
+  position: relative;
+  padding: 1rem;
+  @include clickable-item;
+
+  @include hover-increase;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    max-height: 196px;
+  }
+
+  .title {
+    @extend .default-title;
+    color: $light-blue;
+    padding-left: 0;
+
+    &.highlight {
+      color: $white;
+      background-color: $red-rgba;
+      position: absolute;
+      bottom: 2rem;
+      padding-left: 1rem;
+    }
+  }
+
+  .news-description {
+    border-bottom: 1px solid $light-gray;
+    padding: 1rem 0;
+
+    .description {
+      color: $dark-gray;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+// News article = only text
+.article {
+  padding: 0 1rem;
+  @include clickable-item;
+
+  .section-title {
+    color: $light-blue;
+    padding-left: 0;
+  }
+
+  .description {
+    color: $dark-gray;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $light-gray;
+    padding: 1rem 0;
+    @include hover-opacity;
+  }
+}
+
+// Minor news
+.subnews {
+  @include display-flex;
+  padding: 0.5rem 0;
+  @include clickable-item;
+  @include hover-increase;
+
+  @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-sm-md) {
+    img {
+      max-width: 7rem;
+    }
+  }
+
+  .news-description {
+    padding: 0 0.5rem;
+
+    .title {
+      color: $red;
+      font-weight: 500;
+    }
+  }
+}

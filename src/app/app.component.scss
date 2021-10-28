@@ -1,0 +1,93 @@
+@import '/src/assets/scss/variables.scss';
+@import '/src/assets/scss/mixins.scss';
+
+.logo {
+  font-size: 3rem;
+}
+
+header {
+  @include display-flex-center;
+  background-color: $light-blue;
+  width: 100%;
+  padding: 2rem 1rem 0;
+
+  .menu {
+    flex-grow: 1;
+    text-align: center;
+    @include clickable-item;
+    @include hover-opacity;
+  }
+
+  .header-content {
+    @include display-flex-center;
+    flex-grow: 3;
+    font-weight: 200;
+
+    @media (max-width: $breakpoint-xsm) {
+      img {
+        width: 60%;
+      }
+    }
+
+    p {
+      width: 60%;
+      color: $white;
+      padding-top: 2em;
+    }
+
+    .buttons {
+      @include display-flex-center;
+      width: 40%;
+      justify-content: space-evenly;
+      
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+      }
+     
+    }
+  }
+}
+
+footer {
+  @include display-flex-center;
+  background-color: $dark-blue;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+
+  .copyright-text {
+    color: $white;
+    font-size: 0.8rem;
+    @include display-flex-center;
+    @include display-column;
+  }
+}
+
+.main-page {
+  background-color: #eee;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 5rem 2.5rem;
+  }
+
+  @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    padding: 4rem 2rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: 3rem 1rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 2rem 0.5rem;
+  }
+}
+
+.back-to-top {
+  background-color: $light-blue;
+  color: $white;
+  text-align: right;
+  padding: 0.5rem;
+  @include clickable-item;
+  @include hover-opacity;
+}

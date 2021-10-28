@@ -1,0 +1,38 @@
+<header>
+  <div class="menu" tabindex="0" role="menu">
+    <img src="../assets/images/menu-icon.png" />
+  </div>
+  <div class="header-content">
+    <img src="../assets/images/logo.png" alt="Logo do site folha" />
+    <p class="col-sm-0">O site de teste para <strong>novos webs</strong></p>
+    <div class="buttons">
+      <button type="button" class="btn btn-social facebook">
+        <i class="fab fa-facebook-f"> </i><span class="btn-text">curtir</span>
+      </button>
+      <button type="button" class="btn btn-social twitter">
+        <i class="fab fa-twitter"></i><span class="btn-text">seguir</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Content Page -->
+<main class="main-page">
+  <router-outlet></router-outlet>
+</main>
+
+<div class="back-to-top" tabindex="0" role="button" attr.aria-label="Voltar ao topo" (click)="backToTop()">
+  Voltar ao topo <i class="fas fa-arrow-up"></i>
+</div>
+
+<footer>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-0">
+      <img id="logo-footer" src="../assets/images/logo_footer.png" alt="Logo do site folha" />
+    </div>
+    <div class="copyright-text col-lg-8 col-md-8 col-sm-12">
+      Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mé, boa
+      gentis num é. Viva Forevis aptent taciti sociosqu ad litora torquent.
+    </div>
+  </div>
+</footer>

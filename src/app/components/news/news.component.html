@@ -1,0 +1,68 @@
+<!-- Top News : Photo and title highlighted -->
+<section
+  *ngIf="type == 'top' && item"
+  class="news top-news"
+  tabindex="0"
+  role="article"
+  attr.aria-label="{{ item.title }}"
+>
+  <img
+    [src]="item.img"
+    alt="{{ item.imgdescription }}"
+    tabindex="0"
+    role="img"
+  />
+  <h3 class="title highlight">{{ item.title }}</h3>
+</section>
+
+<!-- Last News: Photo with title and description above -->
+<section
+  *ngIf="type == 'last' && item"
+  class="news last-news "
+  tabindex="0"
+  role="article"
+  attr.aria-label="{{ item.title }}"
+>
+  <img
+    [src]="item.img"
+    alt="{{ item.imgdescription }}"
+    tabindex="0"
+    role="img"
+  />
+  <div
+    class="news-description"
+    tabindex="0"
+    role="article"
+    attr.aria-label="{{ item.description }}"
+  >
+    <h3 class="title">{{ item.title }}</h3>
+    <p class="description">{{ item.description }}</p>
+  </div>
+</section>
+
+<!-- Other: Mix of articles (only text) and minor news (small picture with title and text aside)-->
+<section
+  *ngIf="(type == 'article' || type == 'related') && item"
+  class="subnews {{type}}"
+  tabindex="0"
+  role="article"
+  attr.aria-label="{{ item.title }}"
+>
+  <div *ngIf="type != 'article'">
+    <img
+      [src]="item.img"
+      alt="{{ item.imgdescription }}"
+      tabindex="0"
+      role="img"
+    />
+  </div>
+  <div
+    class="news-description"
+    tabindex="0"
+    role="article"
+    attr.aria-label="{{ item.description }}"
+  >
+    <h4 class="title" *ngIf="type != 'article'">{{ item.title }}</h4>
+    <p class="description">{{ item.description }}</p>
+  </div>
+</section>
